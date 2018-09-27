@@ -1,5 +1,5 @@
 import Vue from 'vue';
-test edit
+test edit add new tabl
 import App from './App.vue';
 import router from './router';
 import store from './store';
