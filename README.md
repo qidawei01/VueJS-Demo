@@ -1,4 +1,4 @@
-# VueJS-Demo
+# demo2
 
 ## Project setup
 ```
@@ -23,8 +23,4 @@ npm run test
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-```
-https://bootstrap-vue.js.org/docs/components/card
 ```
