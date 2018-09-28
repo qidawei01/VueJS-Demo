@@ -1,8 +1,10 @@
 <template>
-<div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Home</h1>
-</div>
+<v-container fluid>
+    <div class="home">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <h1>Home</h1>
+    </div>
+</v-container>
 </template>
 
 <script lang="ts">

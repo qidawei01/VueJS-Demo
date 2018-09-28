@@ -16,7 +16,7 @@
     </v-navigation-drawer>
     <v-toolbar app :clipped-left="clipped">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <v-btn icon @click.stop="miniVariant = !miniVariant">
+        <v-btn icon @click.stop="miniVariant = !miniVariant" v-show="drawer">
             <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
         </v-btn>
         <v-toolbar-title v-text="title"></v-toolbar-title>
@@ -34,8 +34,7 @@
 <script>
 export default {
     name: 'App',
-    components: {
-    },
+    components: {},
     data() {
         return {
             clipped: true,
@@ -60,7 +59,7 @@ export default {
             miniVariant: false,
             right: false,
             rightDrawer: false,
-            title: 'Vuetify.js',
+            title: 'Vuejs-Demo',
         };
     },
 };
