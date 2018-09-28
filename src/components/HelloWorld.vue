@@ -1,9 +1,10 @@
 <template>
 <v-container fluid>
     <div>
-        <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
+       <div class="row"> <h2>{{msg}}</h2> </div>
+        <b-btn v-b-modal.modal1 >Launch demo modal</b-btn>
         <b-modal id="modal1" title="Bootstrap-Vue">
-            <p class="my-4">Hello from modal!</p>
+            <p class="my-4">Hello {{msg}}!</p>
         </b-modal>
     </div>
 </v-container>

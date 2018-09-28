@@ -24,3 +24,9 @@ npm run test
 ```
 npm run lint
 ```
+
+```
+install extensions -> Auto Close Tag 
+                   -> Auto Rename Tag 
+                   -> Class autocomplete for HTML
+```
