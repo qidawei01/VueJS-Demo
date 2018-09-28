@@ -9,23 +9,21 @@
 </template>
 
 <script lang="ts">
+import {
+    Component,
+    Vue,
+} from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue';
 
-export default {
-    name: 'Test1',
+@Component({
     components: {
         HelloWorld,
     },
-    data: () => {
-        return {
-            msg: 'EEEE111',
-        };
-    },
-    methods: {
-        setvalues() {
-            const that: any = this;
-            that.msg = 'EEEE';
-        },
-    },
-};
+})
+export default class Test1 extends Vue {
+    private msg = 'Welcome to Your Vue.js + TypeScript App';
+    private setvalues() {
+        this.msg = 'dddd';
+    }
+}
 </script>
