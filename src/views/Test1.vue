@@ -5,9 +5,9 @@
         <b-btn class="col-1 left" @click="addTodo">Add</b-btn>
     </div>
 
-    <div class="about">
-        <div class="top" v-for="(todo,index) in todos" :key="index" :title="todo.name" @remove="todos.splice(index,1)">
-            {{todo.name}}
+    <div class="about top">
+        <div class="row top" v-for="(todo,index) in todos" :key="index" :title="todo.name" @remove="todos.splice(index,1)">
+            <div class="col-2"> {{todo.name}}</div>
             <b-btn @click="todos.splice(index,1)">Remove</b-btn>
         </div>
     </div>
@@ -34,15 +34,16 @@ export default {
                     age: '23',
                 },
             ],
-        }
+        };
     },
     methods: {
-        addTodo: function () {
-            this.todos.push({
-                name: this.newtodo,
-                age: ''
+        addTodo() {
+            const me: any = this;
+            me.todos.push({
+                name: me.newtodo,
+                age: '',
             });
-            this.newtodo = '';
+            me.newtodo = '';
         },
     },
 };
@@ -50,7 +51,7 @@ export default {
 
 <style scoped>
 .top {
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 .left {
