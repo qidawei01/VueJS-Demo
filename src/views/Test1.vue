@@ -1,29 +1,59 @@
 <template>
 <v-container fluid>
+    <div class="row">
+        <b-input type="text" class="col-3" v-model="newtodo"></b-input>
+        <b-btn class="col-1 left" @click="addTodo">Add</b-btn>
+    </div>
+
     <div class="about">
-        <h1>This is an Test1 page</h1>
-        <HelloWorld v-bind:msg="msg"></HelloWorld>
-        <b-button @click="setvalues()">Button</b-button>
+        <div class="top" v-for="(todo,index) in todos" :key="index" :title="todo.name" @remove="todos.splice(index,1)">
+            {{todo.name}}
+            <b-btn @click="todos.splice(index,1)">Remove</b-btn>
+        </div>
     </div>
 </v-container>
 </template>
 
 <script lang="ts">
-import {
-    Component,
-    Vue,
-} from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue';
-
-@Component({
-    components: {
-        HelloWorld,
+import TodoItem from '@/compontents/TodoItem.vue';
+export default {
+    name: 'Test1',
+    data() {
+        return {
+            newtodo: '',
+            todos: [{
+                    name: 'A',
+                    age: '23',
+                },
+                {
+                    name: 'B',
+                    age: '23',
+                },
+                {
+                    name: 'C',
+                    age: '23',
+                },
+            ],
+        }
     },
-})
-export default class Test1 extends Vue {
-    private msg = 'Welcome to Your Vue.js + TypeScript App';
-    private setvalues() {
-        this.msg = 'dddd';
-    }
-}
+    methods: {
+        addTodo: function () {
+            this.todos.push({
+                name: this.newtodo,
+                age: ''
+            });
+            this.newtodo = '';
+        },
+    },
+};
 </script>
+
+<style scoped>
+.top {
+    margin-top: 10px;
+}
+
+.left {
+    margin-left: 20px;
+}
+</style>

@@ -1,4 +1,14 @@
 {
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
   "defaultSeverity": "warning",
   "extends": [
     "tslint:recommended"
@@ -14,6 +24,9 @@
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-consecutive-blank-lines": false,
+    "no-console": [false],
+    "noImplicitAny": false,
+    "noImplicitThis": false
   }
 }

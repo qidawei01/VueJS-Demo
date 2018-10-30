@@ -1,5 +1,4 @@
 <template>
-<v-container fluid>
     <div>
        <div class="row"> <h2>{{msg}}</h2> </div>
         <b-btn v-b-modal.modal1 >Launch demo modal</b-btn>
@@ -7,7 +6,6 @@
             <p class="my-4">Hello {{msg}}!</p>
         </b-modal>
     </div>
-</v-container>
 </template>
 
 <script>
