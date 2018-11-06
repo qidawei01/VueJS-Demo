@@ -1,23 +1,34 @@
 <template>
 <v-container fluid>
     <div class="row">
-        <b-input type="text" class="col-3" v-model="newtodo"></b-input>
+        <b-input type="text" class="col-2" v-model="newtodo" placeholder="Enter your name"></b-input>
         <b-btn class="col-1 left" @click="addTodo">Add</b-btn>
     </div>
 
     <div class="about top">
-        <div class="row top" v-for="(todo,index) in todos" :key="index" :title="todo.name" @remove="todos.splice(index,1)">
+        <div class="row top" v-for="(todo,index) in todos" :key="index" :title="todo.name">
             <div class="col-2"> {{todo.name}}</div>
             <b-btn @click="todos.splice(index,1)">Remove</b-btn>
         </div>
     </div>
+
+    <ul>
+        <li is="todo-item" class="top" v-for="(todo,index) in todos" :key="index" :title="todo.name" @remove="todos.splice(index,1)"></li>
+    </ul>
 </v-container>
 </template>
 
 <script lang="ts">
-import TodoItem from '@/compontents/TodoItem.vue';
+import {
+    Component,
+    Vue,
+} from 'vue-property-decorator';
+import TodoItem from '@/components/TodoItem.vue';
 export default {
     name: 'Test1',
+    components: {
+        TodoItem,
+    },
     data() {
         return {
             newtodo: '',
@@ -38,12 +49,13 @@ export default {
     },
     methods: {
         addTodo() {
-            const me: any = this;
-            me.todos.push({
-                name: me.newtodo,
-                age: '',
-            });
-            me.newtodo = '';
+            if (this.newtodo !== '') {
+                this.todos.push({
+                    name: this.newtodo,
+                    age: '',
+                });
+                this.newtodo = '';
+            }
         },
     },
 };

@@ -1,7 +1,7 @@
 <template>
 <div>
     <li>{{ title }}
-        <button @click="$emit('remove')">Remove</button></li>
+        <b-btn @click="$emit('remove')">Remove</b-btn></li>
 </div>
 </template>
 
